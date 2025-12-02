@@ -1,6 +1,11 @@
 #include <GL/glut.h>
 #include "scene.h"
 
+
+// ADICIONE ISTO:
+extern GLuint texChao;
+extern GLuint texTorre;
+
 int janelaW = 1920;
 int janelaH = 1080;
 int centerX = janelaW / 2;

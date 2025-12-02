@@ -23,8 +23,8 @@ static void desenhaBicicleta()
     float anguloRodas = -glutGet(GLUT_ELAPSED_TIME) * 0.5f;
 
     float corPneu[3] = {0.1f, 0.1f, 0.1f};      // Preto
-    float corQuadro[3] = {0.0f, 0.8f, 0.0f};    // Verde quadro
-    float corAmarelo[3] = {1.0f, 0.9f, 0.0f};   // Amarelo
+    float corRosa[3] = {0.94f, 0.14f, 0.43f};    // Rosa
+    float corRosabb[3] = {0.96f, 0.56f, 0.61f};   // Rosa Bebê
     float corRaio[3] = {0.8f, 0.8f, 0.8f};      // Cinza claro
 
     // RODA DE TRÁS
@@ -76,7 +76,7 @@ static void desenhaBicicleta()
 
     glTranslatef(0.0f, 0.2f, 0.0f);
     glRotatef(anguloRodas, 0.0f, 0.0f, 1.0f);
-    glColor3fv(corAmarelo);
+    glColor3fv(corRosabb);
     glLineWidth(6.0f); //"braços"
 
     glBegin(GL_LINES);
@@ -117,7 +117,7 @@ static void desenhaBicicleta()
 
     // QUADRO DA BICICLETA
 
-    glColor3fv(corQuadro);
+    glColor3fv(corRosa);
     glLineWidth(10.0f);
 
     glBegin(GL_LINES);
@@ -145,7 +145,7 @@ static void desenhaBicicleta()
 
     // GUIDÃO
 
-    glColor3fv(corAmarelo);
+    glColor3fv(corRosabb);
 
     glBegin(GL_LINES);
     glVertex3f(0.5f, 0.9f, -0.3f);
@@ -156,7 +156,7 @@ static void desenhaBicicleta()
     // BANCO (Branco)
 
     glPushMatrix();
-    glColor3fv(corAmarelo);
+    glColor3fv(corRosabb);
     glTranslatef(-0.2f, 0.75f, 0.0f);
     glScalef(0.3f, 0.1f, 0.2f);
     glutSolidCube(1.0f);
@@ -252,6 +252,10 @@ void desenhaChao()
 
 void desenhaTorresELosangos()
 {
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texTorre); // Usa a textura da torre
+    glColor3f(1.0f, 1.0f, 1.0f);
+
     float alturaTorre = 2.5f;
     float w = 0.7f;
 
@@ -345,6 +349,7 @@ void desenhaTorresELosangos()
 
         glEnd();
         glPopMatrix();
+        glDisable(GL_TEXTURE_2D);
 
         // Losango com shader de fogo girando em cima
         glPushMatrix();

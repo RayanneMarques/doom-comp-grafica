@@ -123,8 +123,8 @@ int main(int argc, char **argv)
     glEnable(GL_TEXTURE_2D);
 
     // carregando texturas
-    texChao = carregaTextura("assets/181.png");
-    texTorre = carregaTextura("assets/013.png");
+    texChao = carregaTextura("assets/parede-122.png");
+    texTorre = carregaTextura("assets/chao-125.png");
     texDegrau = carregaTextura("assets/190.png");
     texEsfera = carregaTextura("assets/016.png");
     texLava = carregaTextura("assets/179.png");
