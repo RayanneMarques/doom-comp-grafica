@@ -10,7 +10,7 @@
 extern GLuint texParede;      // Parede 1 (Pedra)
 extern GLuint texParedeMetal; // Parede 2 (Metal) - NOVO
 
-extern GLuint texChao;        // Piso 1 (Comum)
+extern GLuint texPiso;        // Piso 1 (Comum)
 extern GLuint texPisoAlt;     // Piso 2 (Alternativo) - NOVO
 
 extern GLuint texTeto;        // Teto - NOVO
@@ -198,12 +198,12 @@ void drawLevel(const MapLoader &map)
             }
             else if (c == '0') {
                 // Piso Comum (Sem teto - Externo)
-                desenhaTileChao(wx, wz, texChao);
+                desenhaTileChao(wx, wz, texPiso);
                 temTeto = false;
             }
             else if (c == 'I') {
                 // Piso Comum (Com teto - Interno)
-                desenhaTileChao(wx, wz, texChao);
+                desenhaTileChao(wx, wz, texPiso);
                 temTeto = true;
             }
             else if (c == '_') {
