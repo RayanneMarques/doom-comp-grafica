@@ -20,7 +20,7 @@ int fps = 0;
 int frameCount = 0;
 int previousTime = 0;
 
-GLuint texChao;
+GLuint texPiso;
 GLuint texParede;
 GLuint texSangue;
 GLuint texLava;
@@ -75,7 +75,6 @@ void reshape(int w, int h)
     float a = (float)w / (float)h;
 
     glViewport(0, 0, w, h);
-
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluPerspective(60.0f, a, 1.0f, 100.0f);
@@ -123,7 +122,7 @@ int main(int argc, char **argv)
     glEnable(GL_TEXTURE_2D);
 
     // carregando texturas
-    texChao = carregaTextura("assets/181.png");
+    texPiso = carregaTextura("assets/181.png");
     texParede = carregaTextura("assets/091.png");
     texSangue = carregaTextura("assets/016.png");
     texLava = carregaTextura("assets/179.png");
